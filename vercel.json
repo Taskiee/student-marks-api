@@ -1,19 +1,11 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "index.py",
-      "use": "@vercel/python"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api",
-      "dest": "index.py"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "index.py"
-    }
-  ]
+  "builds": [{
+    "src": "api/marks.py",
+    "use": "@vercel/python"
+  }],
+  "routes": [{
+    "src": "/api/(.*)",
+    "dest": "api/marks.py"
+  }]
 }
